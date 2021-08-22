@@ -1,0 +1,11 @@
+br\com\mpcommerce\beans\ProductBean.class
+br\com\mpcommerce\dao\CategoryDAO.class
+br\com\mpcommerce\models\Product.class
+br\com\mpcommerce\models\User.class
+br\com\mpcommerce\models\Image.class
+br\com\mpcommerce\Test.class
+br\com\mpcommerce\models\Category.class
+br\com\mpcommerce\models\Sale.class
+br\com\mpcommerce\beans\CategoryBean.class
+br\com\mpcommerce\models\SaleProduct.class
+br\com\mpcommerce\dao\ConnectionFactory.class

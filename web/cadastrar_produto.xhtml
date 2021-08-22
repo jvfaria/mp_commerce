@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://www.w3.org/1999/xhtml">
+<style type="text/css">
+          body {
+            width: 100vw;
+            height: 100vh;
+            margin: 0 auto;
+            background-color: #e3e3e3cc;
+          }
+          .card {
+            text-align: center;
+          }
+
+          #content {
+            margin: 0 auto;
+          }
+          #sidebar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+          }
+          .cbutton {
+            width: 200px;
+          }
+          .cbutton + .cbutton {
+            margin-top: 20px;
+          }
+          .logo {
+              width: 5%
+          }
+
+          .detail {
+              width: 95%;
+              padding-left: 25px;
+          }
+
+          .detail td {
+              font-size: 24px;
+          }
+          label {
+            display: flex;
+            text-align: left;
+            align-items: left;
+            margin: 10px;
+            font-size: 20px;
+            font-color: black;
+            font-family: 'Urbanist', sans-serif;
+          }
+
+      </style>
+<h:head>
+
+</h:head>
+<h:body>
+    <div class="card">
+        <div class="ui-g">
+            <p:sidebar id="sidebar" widgetVar="sb">
+                <h1>Menu</h1>
+                <p:commandButton class="cbutton" value="Cadastrar produto" action="cadastrar_produto.xhtml"/>
+                <p:commandButton class="cbutton" value="Cancel" onclick="PF('sb').hide()"/>
+            </p:sidebar>
+            <p:commandButton value="menu" type="button" onclick="PF('sb').show()"/>
+
+            <div id="content" class="ui-g-12 ui-md-4 ui-g-nopad">
+                <h1>Cadastro de produtos</h1>
+                <form>
+                    <div class="card">
+                        <div class="ui-fluid p-formgrid p-grid">
+                            <div class="p-field">
+                                <label for="name">Nome do produto</label>
+                                <p:inputText id="name" type="text" />
+                            </div>
+                            <div class="p-field">
+                                <label for="stock_balance">Quantidade estoque</label>
+                                <p:inputText id="stock_balance" type="number" />
+                            </div>
+                            <div class="p-field">
+                                <label for="category">Categoria</label>
+                                <p:selectOneMenu id="category" value="">
+            <!--                        <p:ajax update="category"/>-->
+                                    <f:selectItem itemLabel="Selecione uma categoria" itemValue="" noSelectionOption="true"/>
+                                    <f:selectItems value=""/>
+                                </p:selectOneMenu>
+                            </div>
+                            <div class="p-field">
+                                <label for="price">Preço</label>
+                                <p:inputNumber id="price" symbol=" R$"
+                                               symbolPosition="s" decimalSeparator="," thousandSeparator="." />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</h:body>
+
+
+</html>
