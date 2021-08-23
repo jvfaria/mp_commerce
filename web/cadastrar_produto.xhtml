@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:f="http://www.w3.org/1999/xhtml">
+      xmlns:f="http://java.sun.com/jsf/core">
 <style type="text/css">
           body {
             width: 100vw;
@@ -82,10 +82,16 @@
                             </div>
                             <div class="p-field">
                                 <label for="category">Categoria</label>
-                                <p:selectOneMenu id="category" value="">
-            <!--                        <p:ajax update="category"/>-->
-                                    <f:selectItem itemLabel="Selecione uma categoria" itemValue="" noSelectionOption="true"/>
-                                    <f:selectItems value=""/>
+                                <p:selectOneMenu id="option" value="#{categoryBean.name}">
+                                    <f:selectItem itemLabel="Select a category" itemValue="" noSelectOption="true"/>
+                                    <f:selectItems value="#{categoryBean.categories}"
+                                                   var="category"
+                                                   itemLabel="#{category.name}"
+                                                   itemValue="category"/>
+                                    <f:facet name="footer">
+                                        <p:divider styleClass="p-mt-0" />
+                                        <h:outputText value="#{categoryBean.categories_quantity} categories" style="font-weight:bold;"/>
+                                    </f:facet>
                                 </p:selectOneMenu>
                             </div>
                             <div class="p-field">

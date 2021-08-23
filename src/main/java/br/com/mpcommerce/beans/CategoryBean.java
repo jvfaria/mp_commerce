@@ -10,25 +10,30 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.faces.bean.ViewScoped;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
+
+import static java.util.Arrays.asList;
 
 @ManagedBean
 @Getter @Setter
-@ViewScoped
+@RequestScoped
 public class CategoryBean implements Serializable {
     private List<Category> categories;
+    private Long categories_quantity;
     private Long id;
     private String name;
 
 
-//
-//    @PostConstruct
-//    public void init() {
-//        try{
-//            this.categories = new CategoryDAO().findAll();
-//        }catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//
-//    }
+
+    @PostConstruct
+    public void init() {
+        try{
+            this.categories = new CategoryDAO().findAll();
+            this.categories_quantity = (long) this.categories.size();
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
 }

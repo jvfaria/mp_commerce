@@ -11,16 +11,11 @@ import java.util.stream.Collectors;
 public class Test {
     public static void main(String[] args) throws Exception {
         Category category1 = new Category();
-        category1.setName("Eletronicos");
-        CategoryBean categoryBean = new CategoryBean();
-        categoryBean.setName("Eletronicos");
+        category1.setName("Eletrodomésticos");
         CategoryDAO categoryDAO = new CategoryDAO();
 
-        List<Category> categories = categoryDAO.findAll();
+        categoryDAO.save(category1);
 
-        System.out.println("Categories: ");
-        for (Category c: categories) {
-            System.out.println(c);
-        }
+
     }
 }

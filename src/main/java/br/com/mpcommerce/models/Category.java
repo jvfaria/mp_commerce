@@ -16,9 +16,4 @@ public class Category implements Serializable {
 
     @Column
     private String name;
-
-
-    public String toString() {
-        return "ID:" + this.id + "\n" + "Name: " + this.name;
-    }
 }

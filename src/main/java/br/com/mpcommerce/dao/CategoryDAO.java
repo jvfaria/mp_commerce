@@ -57,5 +57,18 @@ public class CategoryDAO {
         }
     }
 
+    public Long findQuantity() {
+        EntityManager em = getEntityManager();
+
+        try {
+            String jpql = "SELECT count(*) from Category";
+            Query query = em.createQuery(jpql);
+            long total = ((Number) query.getSingleResult()).longValue();
+            return total;
+        }finally {
+            em.close();
+        }
+    }
+
 
 }
