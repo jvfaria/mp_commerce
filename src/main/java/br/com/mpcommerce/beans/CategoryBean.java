@@ -21,14 +21,14 @@ public class CategoryBean implements Serializable {
     private String name;
 
 
-
-    @PostConstruct
-    public void init() {
-        try{
-            this.categories = new CategoryDAO().findAll();
-        }catch (Exception e) {
-            e.printStackTrace();
-        }
-
-    }
+//
+//    @PostConstruct
+//    public void init() {
+//        try{
+//            this.categories = new CategoryDAO().findAll();
+//        }catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//
+//    }
 }

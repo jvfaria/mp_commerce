@@ -39,12 +39,6 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.sun.faces</groupId>
-            <artifactId>jsf-api</artifactId>
-            <version>2.2.20</version>
-        </dependency>
-
-        <dependency>
             <groupId>com.sun.facelets</groupId>
             <artifactId>jsf-facelets</artifactId>
             <version>1.1.14</version>
@@ -59,12 +53,20 @@
             <artifactId>weld-tomcat-support</artifactId>
             <version>1.0.1-Final</version>
         </dependency>
-
+        <!-- https://mvnrepository.com/artifact/com.sun.faces/jsf-api -->
+        <dependency>
+            <groupId>com.sun.faces</groupId>
+            <artifactId>jsf-api</artifactId>
+            <version>2.2.13</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.sun.faces/jsf-impl -->
         <dependency>
             <groupId>com.sun.faces</groupId>
             <artifactId>jsf-impl</artifactId>
-            <version>2.2.20</version>
+            <version>2.2.13</version>
         </dependency>
+
+
         <dependency>
             <groupId>org.primefaces</groupId>
             <artifactId>primefaces</artifactId>
@@ -105,12 +107,7 @@
             <artifactId>hibernate-jpa-2.1-api</artifactId>
             <version>1.0.0.Final</version>
         </dependency>
-
-        <dependency>
-            <groupId>org.jboss.weld.servlet</groupId>
-            <artifactId>weld-servlet-core</artifactId>
-            <version>4.0.2.Final</version>
-        </dependency>
+        
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
